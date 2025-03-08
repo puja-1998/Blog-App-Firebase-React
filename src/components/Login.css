@@ -1,0 +1,63 @@
+.main{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, pink, skyblue);
+}
+.container{
+    height: 400px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    box-shadow: 1px 1px 10px 2px black;
+    border-radius: 20px;
+    background-color: aliceblue;
+}
+.inputdiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    font-size: large;
+    font-weight: 500;
+}
+.container h1{
+    font-size: 32px;
+    font-weight: 700;
+    color: blueviolet;
+    text-shadow: 1px 1px 5px black;
+}
+.inputdiv .email, .pass{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+input{
+    height: 40px;
+    width: 300px;   
+    border-radius: 10px;
+    padding: 10px;
+    font-size: medium;
+    border: none;
+    background-color: antiquewhite;
+}
+button{
+    height: 40px;
+    width: 200px;   
+    border-radius: 10px;
+    padding: 10px;
+    font-size: medium;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.login-logout{
+    display: flex;
+    gap: 10px;
+}
