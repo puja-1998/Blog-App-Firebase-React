@@ -1,0 +1,19 @@
+.create-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.form-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    gap: 20px;
+    width: 30%;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 20px;
+    background-color:lightgrey ;
+}

@@ -1,8 +1,10 @@
 import { createUserWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
-import React, { useState } from 'react';
-import { auth, googleAuthProvider } from '../config/Firebase';
+import React, { useContext, useEffect, useState } from 'react';
+import { auth, googleAuthProvider } from '../../config/Firebase';
 import './Login.css';
-import Divider from './Divider';
+import Divider from '../Divider/Divider';
+import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../../App';
 
 export default function Login() {
 
@@ -10,13 +12,29 @@ export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    // console.log(auth?.currentUser?.email);
-    // console.log(auth?.currentUser?.photoURL);
+    // Redirect to home page
+    const navigate = useNavigate();
+    const {user, setUser} = useContext(UserContext);
+    useEffect(()=>{
+        if(localStorage.getItem("displayName")){
+            navigate('/home')
+        }
+    },[])
+
     //Login Function
-const handleLogin = async() =>{
+    const handleLogin = async() =>{
     try{
        let res = await signInWithPopup(auth, googleAuthProvider);
         console.log(res, "user");
+
+        let userDetails = {
+            displayName: res.user.displayName,
+            email: res.user.email,
+            uid: res.user.uid,
+        };
+        setUser(userDetails);
+        localStorage.setItem("userDetails", JSON.stringify(userDetails))
+        navigate("/home");
         
     }catch(err){
         console.log("Error occured while logging in...", err);

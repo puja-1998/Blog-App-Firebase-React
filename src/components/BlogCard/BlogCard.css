@@ -1,0 +1,9 @@
+.blog-card{
+    
+    padding: 20px;
+    box-shadow: 0.5px 0.5px 3px 4px gray;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: black;
+}
